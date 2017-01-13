@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
+import com.example.user.mrt_all.Fragment.Record;
+import com.example.user.mrt_all.Fragment.StationList;
 import com.example.user.mrt_all.adapter.MyAdapter;
 import com.example.user.mrt_all.Fragment.Mappic;
 import com.example.user.mrt_all.Fragment.PriceSerch;
@@ -21,7 +23,7 @@ public class MRT_ALL extends AppCompatActivity implements
         ViewPager.OnPageChangeListener
 {
 
-    private String[] titles = new String[]{"捷運路線圖","轉乘資訊","票價查詢"}; // TabLayout中的標籤標題
+    private String[] titles = new String[]{"捷運路線圖","轉乘資訊","記帳備忘錄"}; // TabLayout中的標籤標題
     private ViewPager viewPager;
     private List<Fragment> fragmentList;
     private Toolbar toolbar;
@@ -67,9 +69,15 @@ public class MRT_ALL extends AppCompatActivity implements
 
         Bundle bundle3 = new Bundle();
         bundle3.putInt("idx", 2);
-        PriceSerch myFmt3 = new PriceSerch();
+        Record myFmt3 = new Record();
         myFmt3.setArguments(bundle3);
         fragmentList.add(2, myFmt3);
+
+//        Bundle bundle4 = new Bundle();
+//        bundle4.putInt("idx", 3);
+//        Record myFmt4 = new Record();
+//        myFmt4.setArguments(bundle4);
+//        fragmentList.add(3, myFmt4);
 
 
 
@@ -87,20 +95,15 @@ public class MRT_ALL extends AppCompatActivity implements
         tabLayout.setupWithViewPager(viewPager);
     }
 
-
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
     }
 
     @Override
     public void onPageSelected(int position) {
         toolbar.setTitle(titles[position]); //切換頁面時,換title
-
     }
-
     @Override
     public void onPageScrollStateChanged(int state) {
-
     }
 }
