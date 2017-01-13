@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
     public void newBook(){
         if (editname.getText().toString().equals("")
                 || editprice.getText().toString().equals(""))
-            Toast.makeText(this,"輸入資料不完全",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"輸入資料不完全  ",Toast.LENGTH_SHORT).show();
         else {
             double price =Double.parseDouble(editprice.getText().toString());
 
